@@ -22,6 +22,7 @@ router.post('/notes', (req, res) =>{
     }
  }); 
 
+ //deletes if asked to delete
  router.delete("/notes/:id", (req, res) => {
     const id = req.params.id;
     let rawdata = fs.readFileSync(path.join(__dirname, "../db/db.json"), "utf8")

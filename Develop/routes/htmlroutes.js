@@ -5,7 +5,6 @@ const fs = require('fs');
 router.get("/api/notes", (req, res) => {
   try{
     const data = fs.readFileSync(path.join(__dirname, "../db/db.json"), "utf8")
-    //console.log(data);
     res.send(data)
   } catch (err) {
     console.error(err)
