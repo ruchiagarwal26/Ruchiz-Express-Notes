@@ -11,7 +11,6 @@ router.post('/notes', (req, res) =>{
 
     try {
         let rawdata = fs.readFileSync(path.join(__dirname, "../db/db.json"), "utf8")
-        console.log("raw Data: ", rawdata);
         let noteArray = JSON.parse(rawdata)
         noteArray.push(newNote)
 
@@ -34,7 +33,7 @@ router.post('/notes', (req, res) =>{
             newNoteArray=noteArray.filter(note=>note.id!==id)
             const fileDb = path.join(__dirname, "../db/db.json")
             fs.writeFileSync(fileDb, JSON.stringify(newNoteArray))
-            console.log(`Delete it`)
+            console.log('Deleted id ', id);
             res.json(newNoteArray)
         }
         else{
