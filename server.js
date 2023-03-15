@@ -1,7 +1,7 @@
 const express = require('express');
 const htmlroute = require('./routes/htmlroutes');
 const apiroute = require('./routes/apiroutes');
-
+const PORT = 3000 || process.env.PORT
 
 const app = express();
 
@@ -13,6 +13,6 @@ app.use('/', htmlroute);
 app.use('/api', apiroute);
 
 //calling at port 3000
-app.listen(3000, (req,res) => {
+app.listen(PORT, (req,res) => {
   console.log ("you are on port 3000")
 })
