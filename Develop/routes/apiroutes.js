@@ -36,14 +36,6 @@ router.post('/notes', (req, res) =>{
             console.log('Deleted id ', id);
             res.json(newNoteArray)
         }
-        else{
-            console.log(`Not Found`)
-            res.json(`Not Found`)
-        }
-    }
-    else {
-        console.log(`Data Base Empty`)
-        res.json(`Data Base Empty`)
     }
     });
  
